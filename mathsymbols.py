@@ -1,3 +1,4 @@
+from typing import Dict
 from types import MappingProxyType
 
 
@@ -112,7 +113,7 @@ symbols = MappingProxyType(
 )
 
 
-def search(namelike):
+def search(namelike: str) -> Dict:
 
     """
     Return a dictionary of symbols with names
@@ -124,7 +125,7 @@ def search(namelike):
     return filtered
 
 
-def print_symbols(symbols_to_print = symbols):
+def print_symbols(symbols_to_print:Dict = symbols) -> None:
 
     """
     Prints symbols in the symbols argument,
@@ -140,4 +141,3 @@ def print_symbols(symbols_to_print = symbols):
         print(f"   decimal: {str(ord(symbols_to_print[symbol])).ljust(5, ' ')}", end="")
 
         print(f"   hexadecimal: \\u{hex(ord(symbols_to_print[symbol]))[2:]}")
-
